@@ -1,0 +1,350 @@
+:root {
+    --color-primario: #006633;    
+    --color-acento: #FFCC00;       
+    --color-oscuro: #111111;       
+    --color-gris-fondo: #f4f4f4;   
+    --color-blanco: #ffffff;
+    --color-texto: #333333;
+    --fuente-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--color-gris-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+main, 
+section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+
+header {
+    background-color: var(--color-oscuro);
+    border-bottom: 4px solid var(--color-acento);
+    padding: 15px 20px;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color-acento);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-menu a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    background-color: var(--color-primario);
+    color: var(--color-acento);
+}
+
+.live-broadcast {
+    background-color: #cc0000;
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.live-btn {
+    background-color: var(--color-acento);
+    color: #000000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.live-btn:hover {
+    transform: scale(1.05);
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('imagenes/estadio.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.hero-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.trophy-img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    display: block;
+}
+
+.countdown-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid var(--color-acento);
+    padding: 12px;
+    border-radius: 6px;
+    min-width: 75px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-acento);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.carousel-section, 
+.stadium-section, 
+.mvp-showcase {
+    width: 100%;
+    max-width: 1140px; 
+    margin: 0 auto;    
+}
+
+.carousel-grid, 
+.mvp-grid,
+.stadium-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+
+.carousel-card, 
+.mvp-card { 
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover,
+.mvp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.carousel-card {
+    border-top: 5px solid var(--color-primario);
+}
+
+.mvp-card {
+    border-bottom: 5px solid var(--color-primario);
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 220px;            
+    object-fit: contain;       
+    background-color: var(--color-blanco); 
+    display: block;
+}
+
+.player-photo {
+    width: 100%;
+    height: 280px;            
+    object-fit: contain;       
+    background-color: var(--color-blanco); 
+    display: block;
+}
+
+.carousel-info {
+    padding: 15px 0 0 0;
+}
+
+.carousel-info h3 {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-oscuro);
+}
+
+.carousel-info p {
+    font-size: 0.95rem;
+    color: #666666;
+}
+
+.rating-badge {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 15px 0 10px 0;
+    align-self: flex-start; 
+}
+
+.mvp-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mvp-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.mvp-card ul li:first-child {
+    font-weight: bold;
+    color: var(--color-primario);
+    font-size: 1.05rem;
+}
+
+.mvp-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* Estilos específicos de bordes por confederación */
+.confed-uefa { border-top: 5px solid #0055a5; }
+.confed-conmebol { border-top: 5px solid #ffcc00; }
+.confed-concacaf { border-top: 5px solid #00a650; }
+.confed-caf { border-top: 5px solid #e31b23; }
+.confed-afc { border-top: 5px solid #ff6600; }
+.confed-ofc { border-top: 5px solid #00bfff; }
+
+table-wrapper {
+    width: 100%;
+    overflow-x: auto; 
+    background-color: var(--color-blanco);
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    -webkit-overflow-scrolling: touch; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid var(--color-primario);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .nav-container {
+        flex-direction: row;          
+        justify-content: space-between;
+    }
+
+    .hero-flex-container {
+        flex-direction: row;          
+        justify-content: space-around;
+    }
+}
